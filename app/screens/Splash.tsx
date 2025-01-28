@@ -3,25 +3,25 @@ import React from 'react';
 import {StackNavigationProp} from '@react-navigation/stack';
 
 type RootStackParamList = {
-  Splash: undefined; // Define any params your screen needs here
+  Splash: undefined;
   TabNavigation: undefined;
-  // Other screens you have in your stack
+
 };
 
-type SplashNavigationProp = StackNavigationProp<RootStackParamList, 'Splash'>;
+
 type SplashProps = {
-  navigation: SplashNavigationProp;
+  navigation: StackNavigationProp<RootStackParamList, 'Splash'>
 };
 
 const Splash = ({navigation}:SplashProps) => {
   const goNewScreen = () => {
     setTimeout(() => {
         navigation.replace("TabNavigation")
-    }, 2000);
+    }, 20);
   };
   return (
     <View>
-      <Button onPress={goNewScreen} title='Press' />
+      <Button onPress={goNewScreen} title='SplashScreen' />
     </View>
   );
 };
